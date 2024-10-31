@@ -81,41 +81,25 @@ stdenv.mkDerivation {
     xorg.libXtst
   ];
 
-  # patches = [ ./better_folders.patch ];
+  patches = [ ./better_folders.patch ];
 
   cmakeFlags = [
     # "-Dgearmulator_BUILD_FX_PLUGIN=ON"  # DEFAULT: OFF
     "-Dgearmulator_BUILD_JUCEPLUGIN_LV2=OFF" # DEFAULT: ON
-    # "-Dgearmulator_SYNTH_NODALRED2X=ON"  # DEFAULT: ON
-    # "-Dgearmulator_SYNTH_OSIRUS=ON"  # DEFAULT: ON
-    # "-Dgearmulator_SYNTH_OSTIRUS=ON"  # DEFAULT: ON
-    # "-Dgearmulator_SYNTH_VAVRA=ON"  # DEFAULT: ON
-    # "-Dgearmulator_SYNTH_XENIA=ON"  # DEFAULT: ON
+    # "-Dgearmulator_SYNTH_NODALRED2X=OFF"  # DEFAULT: ON
+    # "-Dgearmulator_SYNTH_OSIRUS=OFF"  # DEFAULT: ON
+    # "-Dgearmulator_SYNTH_OSTIRUS=OFF"  # DEFAULT: ON
+    # "-Dgearmulator_SYNTH_VAVRA=OFF"  # DEFAULT: ON
+    # "-Dgearmulator_SYNTH_XENIA=OFF"  # DEFAULT: ON
   ];
 
   installPhase = ''
     runHook preInstall
 
-    mkdir -p $out/lib/clap/dsp56300
-    cp -rt $out/lib/clap/dsp56300 ./source/mqJucePlugin/mqJucePlugin_artefacts/Release/CLAP/Vavra.clap \
-      ./source/nord/n2x/n2xJucePlugin/n2xJucePlugin_artefacts/Release/CLAP/NodalRed2x.clap \
-      ./source/osTIrusJucePlugin/osTIrusJucePlugin_artefacts/Release/CLAP/OsTIrus.clap \
-      ./source/osirusJucePlugin/osirusJucePlugin_artefacts/Release/CLAP/Osirus.clap \
-      ./source/xtJucePlugin/xtJucePlugin_artefacts/Release/CLAP/Xenia.clap
-
-    mkdir -p $out/lib/vst/dsp56300
-    cp -rt $out/lib/vst/dsp56300 ./source/mqJucePlugin/mqJucePlugin_artefacts/Release/VST/libVavra.so \
-      ./source/nord/n2x/n2xJucePlugin/n2xJucePlugin_artefacts/Release/VST/libNodalRed2x.so \
-      ./source/osTIrusJucePlugin/osTIrusJucePlugin_artefacts/Release/VST/libOsTIrus.so \
-      ./source/osirusJucePlugin/osirusJucePlugin_artefacts/Release/VST/libOsirus.so \
-      ./source/xtJucePlugin/xtJucePlugin_artefacts/Release/VST/libXenia.so
-
-    mkdir -p $out/lib/vst3/dsp56300
-    cp -rt $out/lib/vst3/dsp56300 ./source/mqJucePlugin/mqJucePlugin_artefacts/Release/VST3/Vavra.vst3 \
-      ./source/nord/n2x/n2xJucePlugin/n2xJucePlugin_artefacts/Release/VST3/NodalRed2x.vst3 \
-      ./source/osTIrusJucePlugin/osTIrusJucePlugin_artefacts/Release/VST3/OsTIrus.vst3 \
-      ./source/osirusJucePlugin/osirusJucePlugin_artefacts/Release/VST3/Osirus.vst3 \
-      ./source/xtJucePlugin/xtJucePlugin_artefacts/Release/VST3/Xenia.vst3
+    mkdir -p $out/lib/{clap,vst,vst3}/dsp56300
+    cp -rt $out/lib/clap/dsp56300 ../bin/plugins/Release/CLAP/{NodalRed2x.clap,Osirus.clap,OsTIrus.clap,Vavra.clap,Xenia.clap}
+    cp -rt $out/lib/clap/dsp56300 ../bin/plugins/Release/VST/{libNodalRed2x.so,libOsirus.so,libOsTIrus.so,libVavra.so,libXenia.so}
+    cp -rt $out/lib/vst3/dsp56300 ../bin/plugins/Release/VST3/{NodalRed2x.vst3,Osirus.vst3,OsTIrus.vst3,Vavra.vst3,Xenia.vst3}
 
     runHook postInstall
   '';
