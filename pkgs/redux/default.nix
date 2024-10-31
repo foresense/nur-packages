@@ -14,7 +14,7 @@ stdenv.mkDerivation {
   src = requireFile {
     name = "rns_rdx_135_linux_x86_64.tar.gz";
     url = "https://www.renoise.com/products/redux";
-    hash = "1kwqdlfcj26jy1szs4gkwdwd3gv3r11scj1nikban2k0063byr4c";
+    sha256 = "1kwqdlfcj26jy1szs4gkwdwd3gv3r11scj1nikban2k0063byr4c";
   };
 
   nativeBuildInputs = [ autoPatchelfHook ];
