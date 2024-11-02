@@ -6,7 +6,7 @@
 
 ### [Gearmulator](https://github.com/dsp56300/gearmulator)
 
-Plugins from [The Usual Suspects](https://dsp56300.wordpress.com/), emulating the Motorola DSP563xx series of DSP processors.
+Audio plugins from [The Usual Suspects](https://dsp56300.wordpress.com/), emulating the Motorola DSP563xx series of DSP processors.
 
 - Nodal Red 2X (Clavia Nord Lead 2X)
 - Osirus (Access Virus A/B/C)
@@ -18,13 +18,21 @@ Plugins from [The Usual Suspects](https://dsp56300.wordpress.com/), emulating th
 
 Software to use the [Monome Grid](https://monome.org/docs/grid/) with your computer.
 
-NOTE: Could use a systemd service module. But you can use it from the terminal for now.
+*It could use a systemd service module, but it's useable from the terminal for now.*
 
 ## Binary distributions
 
-### Loomer Aspect
+### [Loomer](https://loomer.co.uk)
 
-[Loomer Aspect 2](https://loomer.co.uk/aspect.html), a semi-modular polyphonic synthesizer.
+Audio plugins from Loomer (they work as demo until registered).
+
+- Architect
+- Aspect
+- Manifold
+- Resound
+- Sequent
+- Shift
+- String
 
 ### Modartt pianoteq
 
