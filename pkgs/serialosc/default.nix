@@ -5,8 +5,6 @@
   cmake,
   pkg-config,
   udev,
-# libuv,
-# liblo,
 }:
 
 stdenv.mkDerivation rec {
@@ -28,12 +26,15 @@ stdenv.mkDerivation rec {
 
   buildInputs = [ udev ];
 
+  installPhase = ''
+    install -D -t $out/bin ./bin/{serialoscd,serialosc-device,serialosc-detector}
+  '';
+
   meta = {
     description = "Multi-device, bonjour-capable monome OSC server";
     homepage = "https://github.com/monome/serialosc";
-    license = lib.licenses.unfree; # FIXME: nix-init did not find a license
-    # maintainers = with lib.maintainers; [ ];
-    mainProgram = "serialosc";
+    license = lib.licenses.mit;
+    mainProgram = "serialoscd";
     platforms = lib.platforms.all;
   };
 }
