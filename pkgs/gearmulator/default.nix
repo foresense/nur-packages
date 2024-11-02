@@ -30,14 +30,15 @@
   xorg,
   unzip,
 }:
-stdenv.mkDerivation {
+stdenv.mkDerivation rec {
   pname = "gearmulator";
   version = "1.3.21";
 
   src = fetchFromGitHub {
     owner = "dsp56300";
     repo = "gearmulator";
-    rev = "020ffa444819512515cf5a8cfacb9a06ad50bf7b";
+    # rev = "020ffa444819512515cf5a8cfacb9a06ad50bf7b";
+    rev = "${version}";
     hash = "sha256-1AXtCAuvt+vubhdkgoFatClTEM1TT4h577ybwLcJnQI=";
     fetchSubmodules = true;
   };
@@ -98,7 +99,7 @@ stdenv.mkDerivation {
 
     mkdir -p $out/lib/{clap,vst,vst3}/dsp56300
     cp -rt $out/lib/clap/dsp56300 ../bin/plugins/Release/CLAP/{NodalRed2x.clap,Osirus.clap,OsTIrus.clap,Vavra.clap,Xenia.clap}
-    cp -rt $out/lib/clap/dsp56300 ../bin/plugins/Release/VST/{libNodalRed2x.so,libOsirus.so,libOsTIrus.so,libVavra.so,libXenia.so}
+    cp -rt $out/lib/vst/dsp56300 ../bin/plugins/Release/VST/{libNodalRed2x.so,libOsirus.so,libOsTIrus.so,libVavra.so,libXenia.so}
     cp -rt $out/lib/vst3/dsp56300 ../bin/plugins/Release/VST3/{NodalRed2x.vst3,Osirus.vst3,OsTIrus.vst3,Vavra.vst3,Xenia.vst3}
 
     runHook postInstall

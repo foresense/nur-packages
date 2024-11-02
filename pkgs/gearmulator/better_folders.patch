@@ -13,9 +13,9 @@ index 57d15da..2a49b05 100644
 +		opts.applicationName = "vavra";
 +		opts.filenameSuffix = "settings";
 +#ifdef JUCE_LINUX 
-+  	opts.folderName = ".local/share/dsp56300-vavra";
++  	opts.folderName = ".config/The Usual Suspects/Vavra";
 +#else
-+  	opts.folderName = "dsp56300-vavra";
++  	opts.folderName = "The Usual Suspects/Vavra";
 +#endif
 +		opts.osxLibrarySubFolder = "Application Support";
  		return opts;
@@ -36,9 +36,9 @@ index 20bbb07..5f8717f 100644
 +		opts.applicationName = "n2x";
 +		opts.filenameSuffix = "settings";
 +#ifdef JUCE_LINUX 
-+  	opts.folderName = ".local/share/dsp56300-n2x";
++  	opts.folderName = ".config/The Usual Suspects/NodalRed2x";
 +#else
-+  	opts.folderName = "dsp56300-n2x";
++  	opts.folderName = "The Usual Suspects/NodalRed2x";
 +#endif
 +		opts.osxLibrarySubFolder = "Application Support";
  		return opts;
@@ -59,9 +59,9 @@ index 8dd4c99..bc3d431 100644
 +		opts.applicationName = "ostirus";
 +		opts.filenameSuffix = "settings";
 +#ifdef JUCE_LINUX 
-+  	opts.folderName = ".local/share/dsp56300-ostirus";
++  	opts.folderName = ".config/The Usual Suspects/OsTIrus";
 +#else
-+  	opts.folderName = "dsp56300-ostirus";
++  	opts.folderName = "The Usual Suspects/OsTIrus";
 +#endif
 +		opts.osxLibrarySubFolder = "Application Support";
  		return opts;
@@ -82,9 +82,9 @@ index d4e6ba5..f0469f3 100644
 +		opts.applicationName = "osirus";
 +		opts.filenameSuffix = "settings";
 +#ifdef JUCE_LINUX 
-+  	opts.folderName = ".local/share/dsp56300-osirus";
++  	opts.folderName = ".config/The Usual Suspects/Osirus";
 +#else
-+  	opts.folderName = "dsp56300-osirus";
++  	opts.folderName = "The Usual Suspects/Osirus";
 +#endif
 +		opts.osxLibrarySubFolder = "Application Support";
  		return opts;
@@ -105,9 +105,9 @@ index 4b2aa2b..d6389a8 100644
 +		opts.applicationName = "xenia";
 +		opts.filenameSuffix = "settings";
 +#ifdef JUCE_LINUX 
-+  	opts.folderName = ".local/share/dsp56300-xenia";
++  	opts.folderName = ".config/The Usual Suspects/Xenia";
 +#else
-+  	opts.folderName = "dsp56300-xenia";
++  	opts.folderName = "The Usual Suspects/Xenia";
 +#endif
 +		opts.osxLibrarySubFolder = "Application Support";
  		return opts;
