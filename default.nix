@@ -14,6 +14,7 @@ in
   libprinthex = callPackage ./pkgs/libprinthex { };
   gearmulator = callPackage ./pkgs/gearmulator { };
   loomer-aspect = callPackage ./pkgs/loomer/aspect.nix { };
+  loomer-architect = callPackage ./pkgs/loomer/architect.nix { };
   pianoteq = callPackage ./pkgs/pianoteq { };
   redux = callPackage ./pkgs/redux { };
   renoise = callPackage ./pkgs/renoise { };
