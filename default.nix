@@ -10,6 +10,8 @@ in
   overlays = import ./overlays;
 
   # packages
+  id3edit = callPackage ./pkgs/id3edit { };
+  libprinthex = callPackage ./pkgs/libprinthex { };
   gearmulator = callPackage ./pkgs/gearmulator { };
   loomer-aspect = callPackage ./pkgs/loomer/aspect.nix { };
   pianoteq = callPackage ./pkgs/pianoteq { };
