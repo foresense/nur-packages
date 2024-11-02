@@ -6,7 +6,6 @@
   alsa-lib,
   freetype,
   libGL,
-
   pname,
   displayName,
   version,
@@ -14,7 +13,7 @@
   meta,
   extraBuildInputs ? [ ],
   withApp,
-  # withAU,
+  withAU,
   withVST,
   withVST3,
 }:
@@ -39,6 +38,7 @@ stdenv.mkDerivation {
     "runHook preInstall"
     (if withApp then "install -D -t $out/bin ${displayName}" else "")
     (if withVST then "install -D -t $out/lib/vst ${displayName}VST.so" else "")
+    "ls -alh"
     (if withVST3 then "fd -tf . ${displayName}.vst3 -x install -D -t $out/lib/vst3/{} {}" else "")
     "runHook postInstall"
   ];

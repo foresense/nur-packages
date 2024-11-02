@@ -1,6 +1,6 @@
 {
-  lib,
   stdenv,
+  lib,
   callPackage,
   fetchurl,
 }:
@@ -9,8 +9,7 @@ let
   throwSystem = throw "Unsupported system: ${system}";
   arch =
     {
-      i686-linux = "";
-      x86_64-linux = "_x86_64";
+      x86_64-linux = "";
       # x86_64-darwin = "";
       # aarch64-darwin = "";
     }
@@ -18,17 +17,16 @@ let
   archive_fmt = if stdenv.hostPlatform.isDarwin then "dmg" else "tar.gz";
   hash =
     {
-      i686-linux = "";
-      x86_64-linux = "sha256-kISRFAnkuPoz/ehVlZfyuDAjMHW80xViNFgBo8bjDwY=";
+      x86_64-linux = "sha256-kMSyymXZ3paPOgVw2NYwyxF/L7SVriOJ5XbiEKl05N8=";
       # x86_64-darwin = "";
       # aarch64-darwin = "";
     }
     .${system} or throwSystem;
 in
 callPackage ./generic.nix rec {
-  pname = "architect";
-  version = "0.10.23";
-  displayName = "Architect";
+  pname = "sequent";
+  version = "2.0.5";
+  displayName = "Sequent";
 
   withApp = true;
   withAU = if stdenv.hostPlatform.isDarwin then true else false;
@@ -36,16 +34,16 @@ callPackage ./generic.nix rec {
   withVST3 = true;
 
   src = fetchurl {
-    url = "https://lmr-dply.s3.eu-west-2.amazonaws.com/${displayName}/${version}/${displayName}${arch}-${version}.${archive_fmt}";
+    url = "https://lmr-dply.s3.eu-west-2.amazonaws.com/${pname}/${version}/${displayName}${arch}-${version}.${archive_fmt}";
     inherit hash;
   };
 
   meta = {
-    description = "Loomer Architect - Modular MIDI Toolkit";
-    homepage = "https://loomer.co.uk/architect.html";
+    description = "Loomer Sequent - Modular Step-Sequenced FX Processor";
+    homepage = "https://loomer.co.uk/sequent.html";
     license = lib.licenses.unfreeRedistributable;
-    mainProgram = "Architect";
     platforms = [ "x86_64-linux" ];
+    mainProgram = "Sequent";
     sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
   };
 }

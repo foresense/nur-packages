@@ -1,6 +1,6 @@
 {
-  lib,
   stdenv,
+  lib,
   callPackage,
   fetchurl,
 }:
@@ -19,17 +19,17 @@ let
   hash =
     {
       i686-linux = "";
-      x86_64-linux = "sha256-kISRFAnkuPoz/ehVlZfyuDAjMHW80xViNFgBo8bjDwY=";
+      x86_64-linux = "sha256-p5luB8tnmC6+wen1tNWPeDae2AeAU5VsvUChTY83StI=";
       # x86_64-darwin = "";
       # aarch64-darwin = "";
     }
     .${system} or throwSystem;
 in
 callPackage ./generic.nix rec {
-  pname = "architect";
-  version = "0.10.23";
-  displayName = "Architect";
-
+  pname = "string";
+  version = "1.17.3";
+  displayName = "String";
+  
   withApp = true;
   withAU = if stdenv.hostPlatform.isDarwin then true else false;
   withVST = true;
@@ -41,11 +41,11 @@ callPackage ./generic.nix rec {
   };
 
   meta = {
-    description = "Loomer Architect - Modular MIDI Toolkit";
-    homepage = "https://loomer.co.uk/architect.html";
+    description = "Loomer String - Ensemble Synth";
+    homepage = "https://loomer.co.uk/string.html";
     license = lib.licenses.unfreeRedistributable;
-    mainProgram = "Architect";
     platforms = [ "x86_64-linux" ];
+    mainProgram = "String";
     sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
   };
 }

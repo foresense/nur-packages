@@ -9,7 +9,6 @@ let
   throwSystem = throw "Unsupported system: ${system}";
   arch =
     {
-      # i686-linux = "";
       x86_64-linux = "";
       # x86_64-darwin = "";
       # aarch64-darwin = "";
@@ -31,7 +30,7 @@ callPackage ./generic.nix rec {
   displayName = "Aspect";
   
   withApp = true;
-  # withAU = if stdenv.hostPlatform.isDarwin then true else false;
+  withAU = if stdenv.hostPlatform.isDarwin then true else false;
   withVST = true;
   withVST3 = true;
   
