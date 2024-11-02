@@ -15,4 +15,5 @@ in
   pianoteq = callPackage ./pkgs/pianoteq { };
   redux = callPackage ./pkgs/redux { };
   renoise = callPackage ./pkgs/renoise { };
+  serialosc = callPackage ./pkgs/serialosc { };
 }
