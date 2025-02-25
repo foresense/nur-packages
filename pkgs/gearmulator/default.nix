@@ -36,7 +36,7 @@ stdenv.mkDerivation rec {
 
   src = fetchFromGitHub {
     fetchSubmodules = true;
-    hash = "sha256-zRlJVmHoD56m3fha0BSVsVcZ7gpUYE8Tfk1coLbITLU=";
+    hash = "sha256-QKT1x/PuiX87XuH0hydkmRKPTkARpKKgFOruVwwRFvM=";
     owner = "dsp56300";
     repo = "gearmulator";
     rev = "${version}";
